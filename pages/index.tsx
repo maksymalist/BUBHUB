@@ -35,6 +35,89 @@ export async function getStaticProps({
   }
 }
 
+const MarqueeData = [
+  {
+    id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NzE0ODE4Mzc2NDE=',
+    name: '"Maple Leaf" Bucket Hat',
+    vendor: 'BUBHUB',
+    description: '',
+    path: '/maple-leaf-bucket-hat',
+    slug: 'maple-leaf-bucket-hat',
+    price: { value: 24.99, currencyCode: 'CAD' },
+    images: [
+      {
+        url:
+          'https://cdn.shopify.com/s/files/1/0575/4598/2025/products/Untitleddesign_1.png?v=1655049534',
+        altText: null,
+        width: 1080,
+        height: 1080,
+      },
+    ],
+    variants: [],
+    options: [],
+  },
+  {
+    id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NzE0ODQ3NTM5OTM=',
+    name: 'Black meets White',
+    vendor: 'BUBHUB',
+    description: '',
+    path: '/black-meets-white',
+    slug: 'black-meets-white',
+    price: { value: 26.99, currencyCode: 'CAD' },
+    images: [
+      {
+        url:
+          'https://cdn.shopify.com/s/files/1/0575/4598/2025/products/H6b864d7aa66143288195ca24a7da7f62K.jpg?v=1654987336',
+        altText: null,
+        width: 1919,
+        height: 1919,
+      },
+    ],
+    variants: [],
+    options: [],
+  },
+  {
+    id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NzE1MTA3MzkwMTc=',
+    name: 'Akatsuki Pattern',
+    vendor: 'BUBHUB',
+    description: '',
+    path: '/akatsuki-pattern',
+    slug: 'akatsuki-pattern',
+    price: { value: 22.99, currencyCode: 'CAD' },
+    images: [
+      {
+        url:
+          'https://cdn.shopify.com/s/files/1/0575/4598/2025/products/Hbc43769d9edf4bcda7f3a6d5f43b49cfb.jpg?v=1654992547',
+        altText: null,
+        width: 750,
+        height: 750,
+      },
+    ],
+    variants: [],
+    options: [],
+  },
+  {
+    id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NzE1Mjg0NjY1MDU=',
+    name: 'Fruit Basket',
+    vendor: 'BUBHUB',
+    description: '',
+    path: '/fruit-basket',
+    slug: 'fruit-basket',
+    price: { value: 29.99, currencyCode: 'CAD' },
+    images: [
+      {
+        url:
+          'https://cdn.shopify.com/s/files/1/0575/4598/2025/products/Hc3cbe4e5fc3f4984a687802032069dbeJ.jpg_720x720q50.jpg?v=1654996534',
+        altText: null,
+        width: 720,
+        height: 720,
+      },
+    ],
+    variants: [],
+    options: [],
+  },
+]
+
 export default function Home({
   products,
   brands,
@@ -42,7 +125,6 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <h1>{JSON.stringify(products)}</h1>
       <Grid>
         {products.slice(0, 3).map((product, i) => (
           <ProductCard
@@ -56,7 +138,7 @@ export default function Home({
         ))}
       </Grid>
       <Marquee variant="secondary">
-        {products.map((product, i) => (
+        {MarqueeData.map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}
@@ -79,7 +161,7 @@ export default function Home({
         ‘Natural’."
       />
       <Marquee>
-        {products.map((product, i) => (
+        {MarqueeData.map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}
