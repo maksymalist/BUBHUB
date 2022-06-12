@@ -42,6 +42,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <h1>{JSON.stringify(products)}</h1>
       <Grid>
         {products.slice(0, 3).map((product, i) => (
           <ProductCard
