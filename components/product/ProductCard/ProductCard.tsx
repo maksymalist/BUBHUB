@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { FC } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
@@ -35,7 +36,7 @@ const ProductCard: FC<Props> = ({
             <Image
               quality="85"
               src={product.images[0].url || placeholderImg}
-              alt={product.name || 'Product Image'}
+              alt={product.name || ''}
               height={320}
               width={320}
               layout="fixed"
