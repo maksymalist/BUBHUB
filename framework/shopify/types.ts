@@ -28,6 +28,22 @@ export type CartItemBody = Core.CartItemBody & {
   optionSelections?: OptionSelections
 }
 
+export type Customer = {
+  acceptsMarketing: boolean
+  addresse: any
+  createdAt: string
+  defaultAddress: any
+  displayName: string
+  email: string
+  firstName: String
+  id: string
+  lastIncompleteCheckout: any
+  lastName: string
+  orders: any
+  phone: string
+  tags: string[]
+}
+
 export type GetCartHandlerBody = Core.GetCartHandlerBody
 
 export type AddCartItemBody = Core.AddCartItemBody<CartItemBody>

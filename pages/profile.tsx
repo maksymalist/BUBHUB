@@ -1,3 +1,5 @@
+//@ts-nocheck
+import type { Customer } from '@framework/types'
 import type { GetStaticPropsContext } from 'next'
 import { getConfig } from '@framework/api'
 import getAllPages from '@framework/common/get-all-pages'
@@ -17,7 +19,7 @@ export async function getStaticProps({
 }
 
 export default function Profile() {
-  const { data } = useCustomer()
+  const { data }: { data: Customer } = useCustomer()
   return (
     <Container>
       <Text variant="pageHeading">My Profile</Text>
