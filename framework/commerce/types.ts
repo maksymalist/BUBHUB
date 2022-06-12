@@ -1,3 +1,4 @@
+//@ts-nocheck
 import type { Wishlist as BCWishlist } from '../bigcommerce/api/wishlist'
 import type { Customer as BCCustomer } from '../bigcommerce/api/customers'
 import type { SearchProductsData as BCSearchProductsData } from '../bigcommerce/api/catalog/products'
