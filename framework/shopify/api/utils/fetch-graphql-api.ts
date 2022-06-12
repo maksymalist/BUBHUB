@@ -1,3 +1,4 @@
+//@ts-nocheck
 import type { GraphQLFetcher } from '@commerce/api'
 import fetch from './fetch'
 

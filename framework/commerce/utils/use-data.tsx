@@ -1,3 +1,4 @@
+//@ts-nocheck
 import useSWR, { responseInterface } from 'swr'
 import type {
   HookSWRInput,
