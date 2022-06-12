@@ -15,6 +15,8 @@ import getSiteInfo from '@framework/common/get-site-info'
 
 import rangeMap from '@lib/range-map'
 
+import { useTheme } from 'next-themes'
+
 // TODO(bc) Remove this. This should come from the API
 import getSlug from '@lib/get-slug'
 
@@ -56,6 +58,8 @@ export default function Search({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [activeFilter, setActiveFilter] = useState('')
   const [toggleFilter, setToggleFilter] = useState(false)
+
+  const { theme } = useTheme()
 
   const router = useRouter()
   const { asPath } = router
@@ -100,7 +104,11 @@ export default function Search({
                 <button
                   type="button"
                   onClick={(e) => handleClick(e, 'categories')}
-                  className="flex justify-between w-full rounded-sm border border-gray-300 px-4 py-3 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
+                  className={
+                    theme === 'dark'
+                      ? 'flex justify-between w-full rounded-sm border border-gray-300 px-4 py-3 bg-black text-sm leading-5 font-medium text-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150'
+                      : 'flex justify-between w-full rounded-sm border border-gray-300 px-4 py-3 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150'
+                  }
                   id="options-menu"
                   aria-haspopup="true"
                   aria-expanded="true"
@@ -130,7 +138,13 @@ export default function Search({
                   : ''
               }`}
             >
-              <div className="rounded-sm bg-white shadow-xs lg:bg-none lg:shadow-none">
+              <div
+                className={
+                  theme === 'dark'
+                    ? 'rounded-sm bg-black shadow-xs lg:bg-none lg:shadow-none'
+                    : 'rounded-sm bg-white shadow-xs lg:bg-none lg:shadow-none'
+                }
+              >
                 <div
                   role="menu"
                   aria-orientation="vertical"

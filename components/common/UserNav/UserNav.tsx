@@ -9,6 +9,8 @@ import { Heart, Bag } from '@components/icons'
 import { useUI } from '@components/ui/context'
 import DropdownMenu from './DropdownMenu'
 import s from './UserNav.module.css'
+import { Moon, Sun } from '@components/icons'
+import { useTheme } from 'next-themes'
 
 interface Props {
   className?: string
@@ -21,11 +23,23 @@ const UserNav: FC<Props> = ({ className }) => {
   const { data: customer } = useCustomer()
   const { toggleSidebar, closeSidebarIfPresent, openModal } = useUI()
   const itemsCount = data?.lineItems.reduce(countItem, 0) ?? 0
+  const { theme, setTheme } = useTheme()
 
   return (
     <nav className={cn(s.root, className)}>
       <div className={s.mainContainer}>
         <ul className={s.list}>
+          <li className={s.item}>
+            <a
+              onClick={() => {
+                theme === 'dark' ? setTheme('light') : setTheme('dark')
+              }}
+            >
+              <div className="ml-3">
+                {theme === 'dark' ? <Sun /> : theme === 'light' ? <Moon /> : ''}
+              </div>
+            </a>
+          </li>
           <li className={s.item} onClick={toggleSidebar}>
             <Bag />
             {itemsCount > 0 && <span className={s.bagCount}>{itemsCount}</span>}

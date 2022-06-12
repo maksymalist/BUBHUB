@@ -120,6 +120,7 @@ const ProductView: FC<Props> = ({ product }) => {
                         variant={opt.displayName}
                         color={v.hexColors ? v.hexColors[0] : ''}
                         label={v.label}
+                        image="dde"
                         onClick={() => {
                           setChoices((choices) => {
                             return {

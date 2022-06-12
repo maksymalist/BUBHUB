@@ -1,6 +1,6 @@
 .root {
   @apply w-full relative;
-  height: 320px;
+  height: auto;
   min-width: 100%;
 }
 

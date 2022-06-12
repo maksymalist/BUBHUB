@@ -1,7 +1,10 @@
 {
   "provider": "shopify",
   "features": {
+    "cart": true,
+    "search": true,
     "wishlist": true,
+    "customerAuth": true,
     "customCheckout": false
   }
 }
