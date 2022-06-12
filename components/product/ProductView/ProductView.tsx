@@ -88,14 +88,12 @@ const ProductView: FC<Props> = ({ product }) => {
             <ProductSlider key={product.id}>
               {product.images.map((image, i) => (
                 <div key={image.url} className={s.imageContainer}>
-                  <Image
+                  <img
                     className={s.img}
                     src={image.url!}
                     alt={image.alt || 'Product Image'}
                     width={1050}
                     height={1050}
-                    priority={i === 0}
-                    quality="85"
                   />
                 </div>
               ))}

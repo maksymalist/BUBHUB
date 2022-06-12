@@ -33,7 +33,7 @@ const ProductCard: FC<Props> = ({
             </span>
           </div>
           {product?.images && (
-            <Image
+            <img
               quality="85"
               src={product.images[0].url || placeholderImg}
               alt={product.name || ''}
@@ -68,7 +68,7 @@ const ProductCard: FC<Props> = ({
           </div>
           <div className={s.imageContainer}>
             {product?.images && (
-              <Image
+              <img
                 alt={product.name || 'Product Image'}
                 className={s.productImage}
                 src={product.images[0].url || placeholderImg}

@@ -94,14 +94,13 @@ const CartItem = ({
     >
       <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer">
         <Link href={`/product/${item.path}`}>
-          <Image
+          <img
             onClick={() => closeSidebarIfPresent()}
             className={s.productImage}
             width={150}
             height={150}
             src={item.variant.image!.url}
             alt={item.variant.image!.altText}
-            unoptimized
           />
         </Link>
       </div>
